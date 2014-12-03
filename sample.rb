@@ -1,12 +1,15 @@
 class ClassNode
- attr_accessor :type,:name,:body
+ attr_accessor :type,:name,:body,:functs
  def initialize(data)
   @type = data[:type]
   @name = data[:name]
   @body = data[:body]
+  #parse functions!
+  @functs = body.scan(/[a-zA-Z]+\s+([^\(\s]+)\s*\(([^\)]*)\)/m)
+  
  end 
  def inspect
-  "#{@type} #{@name} contains #{@body}"
+  "#{@type} #{@name} contains \n#{@body} \n with functions #{@functs}"
  end  
 end
 

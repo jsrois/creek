@@ -1,9 +1,9 @@
 class A {
- void foo(){ 
+ void foo(int a, float b){ 
  
  }
  
- void bar(){
+ void bar(char* name, void aa){
 
  }
 };
